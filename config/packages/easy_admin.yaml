@@ -1,0 +1,17 @@
+easy_admin:
+
+  site_name: Marie Le Brun
+  
+  design:
+        brand_color: 'red'
+        menu:
+
+              - { route: 'accueil', label: "Quitter l'admin", icon: 'home' }
+              - { entity: 'Oeuvre', label: 'Oeuvre', icon: 'palette' }
+              - { entity: 'Exposition', label: 'Exposition', icon: 'bookmark' }
+      
+
+  entities:
+        - App\Entity\Oeuvre
+        - App\Entity\Exposition
+      #   - App\Entity\User

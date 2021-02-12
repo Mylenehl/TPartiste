@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Oeuvres dispos!{% endblock %}
+
+{% block body %}
+
+<div>
+    <h1>Plongez dans l'oeuvre!</h1>
+    <div class="oeuvre">
+            <img src="images/{{oeuvre.grandeImage}}" alt="joli tableau" class="imgoeuvresolo">
+            <h2>{{ oeuvre.getTitre() }}</h2>
+            <p>Année : {{ oeuvre.getAnnee() }}</p>
+            <p>Technique : {{ oeuvre.getTechnique() }}</p>
+            <p>Support : {{ oeuvre.getSupport() }}</p>
+            <p>Largeur : {{ oeuvre.getLargeur() }}</p>
+            <p>Hauteur : {{ oeuvre.getHauteur() }}</p>
+            <p>Prix : {{ oeuvre.getPrix() }}</p>
+    </div>
+    <a href="{{ path('oeuvres') }}" class="retouroeuvres">Retour à la liste des oeuvres</a>
+</div>
+{% endblock %}

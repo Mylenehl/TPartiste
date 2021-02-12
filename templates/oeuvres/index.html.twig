@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Oeuvres dispos!{% endblock %}
+
+{% block body %}
+
+<div>
+    <h1>Voici nos oeuvres disponibles à la vente !</h1>
+    <div class="galerie">
+        {% for oeuvre in oeuvres %}
+            <div class="oeuvres">
+                <a href="{{ path('oeuvre') }}?id={{oeuvre.id}}"><img src="images/{{oeuvre.petiteImage}}" alt="tableau" class="imglienoeuvre"></a>
+                <h2>{{ oeuvre.getTitre() }}</h2>
+            </div>
+        {% endfor %}
+    </div>
+    <a href="{{ path('app_oeuvre_create') }}" class="ajoutoeuvre">Ajouter une oeuvre !</a>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Expositions à venir !{% endblock %}
+
+{% block body %}
+<h1>Voici nos expositions prévues !</h1>
+<div class="expos">
+    
+
+    {% for exposition in expositions %}
+        <div class="expo">
+        <a href="{{ path('expo') }}?id={{exposition.id}}" class="lienexpo"><h2>{{ exposition.getNom() }} </h2></a>
+        <p>Lieu : {{ exposition.getLieu() }} </p>
+        <p>Adresse : {{ exposition.getAdresse() }} </p>
+        <p>Date de début : {{ exposition.getDateDebut|date('y-m-d') }}</p>
+        <p>Date de fin : {{ exposition.getDateFin|date('y-m-d') }}</p>
+        <p>Vernissage : {{ exposition.getDateVernissage|date('y-m-d h-i-s') }}</p>
+        </div>
+    {% endfor %}
+
+    <a href="{{ path('app_exposition_create') }}" class="ajoutexpo">Ajouter une exposition !</a>
+
+</div>
+{% endblock %}

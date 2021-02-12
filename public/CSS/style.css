@@ -1,0 +1,132 @@
+*{
+    box-sizing: border-box;
+}
+main{
+    margin-bottom: 7%;
+    bottom:0;
+}
+h1{
+    text-align: center;
+    text-decoration: underline;
+    margin:3% 0;
+    color:#4444dd;
+}
+img{
+    max-width: 100%;
+    margin:2% 0;
+}
+img:not(.artiste,.imgoeuvresolo){
+    filter: drop-shadow(10px 10px 6px #4444dd);
+}
+
+/*page accueil*/
+.artiste{
+    max-width: 100%;
+    margin: 0 0 2% 0;
+}
+.pres{
+    text-align: center;
+    max-width: 80%;
+    background-color: antiquewhite;
+    margin: 0 auto;
+}
+.lestroisder{
+    text-align: center;
+    margin: 1%;
+}
+
+/*page expositions*/
+.expo{
+    display: block;
+    width: 45%;
+}
+.lienexpo{
+    color: black;
+}
+.lienexpo:hover{
+    color: cornflowerblue;
+}
+
+/*page exposition*/
+.exposition{
+    text-align: center;
+}
+.oeuvresdelexpo{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.oeuvredelexpo{
+    margin: 0 2%;
+}
+
+/*page oeuvres*/
+.oeuvreexpo{
+    margin:2%;
+}
+.oeuvres{
+    text-align: center;
+}
+.imglienoeuvre{
+    -webkit-transform: scale(0.8);
+	transform: scale(0.8);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+    border-radius: 10px;
+}
+.imglienoeuvre:hover{
+    -webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+/*page oeuvre*/
+.oeuvre{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    text-align: center;
+}
+.imgoeuvresolo{
+    max-width: 70%;
+    margin:2% auto;
+}
+.galerie{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+.oeuvres{
+    max-width: 100%;
+}
+/*page forms*/
+form{
+    text-align: center;
+    margin: 4% auto;
+    max-width: 40%;
+}
+label{
+    margin:1%;
+    width:100px;
+}
+button{
+    margin-top: 3%;
+}
+/*media queries desktop*/
+@media screen and (min-width : 768px) {
+    /*page oeuvres et expos*/
+    .galerie,.expos{
+        margin: 2%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+    .oeuvres{
+        /* display: block; */
+        max-width: 45%;
+        margin-right: 3%;
+    }
+    .ajoutoeuvre,.ajoutexpo, .retourexpo,.retouroeuvres{
+        margin-left: 70%;
+    }
+
+}

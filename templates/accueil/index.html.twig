@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil !{% endblock %}
+
+{% block body %}
+<div>
+    <img src="images\marielebrun.jpg" alt="artiste" class="artiste">
+
+    <p class="pres">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et molestias ab rem at. Eveniet neque exercitationem impedit libero magni sunt earum nulla suscipit aut? Quasi ab obcaecati ipsum ullam odit quod sunt praesentium quo ratione veniam neque eos nihil cum excepturi sed earum error placeat iure, alias dolore voluptatum, fuga perferendis doloribus. Eum est alias sed voluptate reprehenderit natus ad explicabo mollitia nam? Id ullam tempora quibusdam, recusandae sunt at explicabo neque sed quae esse, totam libero repudiandae amet voluptas? Voluptates voluptas architecto, excepturi, vel aperiam omnis laudantium nobis aspernatur doloribus sunt deleniti. Assumenda dicta, earum architecto ipsa nam, facere amet eligendi quos ullam laudantium nostrum et odio. Quaerat accusamus perspiciatis deleniti dolore incidunt, vero, animi reprehenderit temporibus nobis consequatur ratione qui facere, a omnis. Eum distinctio cumque impedit quidem magnam officia atque magni ratione consectetur debitis fuga animi aliquid iusto aspernatur illo tempore, dolorem at facere dicta officiis minus tempora modi veniam iste? Earum cupiditate quaerat necessitatibus iste ipsa ad itaque vitae. Vitae, quas ab harum provident doloribus enim delectus officia, quam accusamus possimus in voluptatibus reprehenderit tempora quibusdam rem magnam maiores, quos veniam quaerat adipisci voluptate. Nulla dolorum asperiores consequuntur veniam expedita porro nesciunt, veritatis tempore dolores dicta.</p>
+
+    {% for exposition in lestroisder %}
+        <p class="lestroisder"><a href="{{ path('expo') }}?id={{exposition.id}}">{{ exposition.getNom() }} </a></p>
+    {% endfor %}
+</div>
+{% endblock %}

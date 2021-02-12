@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Expositions à venir !{% endblock %}
+
+{% block body %}
+
+<div class="exposition">
+    <h1>Venez découvrir cette exposition !</h1>
+
+    {# affichage info de l'exposition ciblée #}
+    <h2>{{ expositionciblee.getNom() }} </h2>
+    <p>Lieu : {{ expositionciblee.getLieu() }} </p>
+    <p>Adresse : {{ expositionciblee.getAdresse() }} </p>
+    <p>Date de début : {{ expositionciblee.getDateDebut|date('y-m-d') }}</p>
+    <p>Date de fin : {{ expositionciblee.getDateFin|date('y-m-d') }}</p>
+    <p>Vernissage : {{ expositionciblee.getDateVernissage|date('y-m-d h-i-s') }}</p>
+
+    <h3>Les oeuvres de cette exposition</h3>
+    <div class="oeuvresdelexpo">
+        {# on boucle pour récupérer toutes les oeuvres de l'expo #}
+        {% for item in oeuvredelexpo %}
+            <div class="oeuvredelexpo">
+                <a href="{{ path('oeuvre') }}?id={{item.id}}"><img src="images/{{item.petiteImage}}" alt="oeuvre exposee" class="imglienoeuvre"></a>
+                <p>{{item.titre}}</p>
+            </div>
+        {% endfor %}
+    </div>
+    
+    {# petit lien pour retourner à la liste #}
+    <a href="{{ path('expositions') }}" class="retourexpo">Retour à la liste des expositions !</a>
+
+</div>
+{% endblock %}
